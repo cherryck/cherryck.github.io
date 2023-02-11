@@ -1,0 +1,31 @@
+<!-- 핸드폰 상에서 버튼 클릭 시 텍스트를 스마트폰의 클립보드로 복사해주는 html 파일-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Copy Text to Clipboard</title>
+</head>
+<body>
+
+    <h1>Copy Text to Clipboard</h1>
+
+    <p id="text">This is the text that will be copied to your clipboard.</p>
+
+    <button onclick="copyText()">Copy Text</button>
+
+    <script type="text/javascript">
+        function copyText(){
+            var text = document.getElementById("text");
+
+            var range = document.createRange();  
+            range.selectNode(text);  
+            window.getSelection().addRange(range);  
+
+            document.execCommand("copy");  // This will copy the text to your clipboard
+
+            alert("Text copied to clipboard!");  // Alert the user that the text has been copied
+        } 
+    </script> 
+</body>
+</html>
