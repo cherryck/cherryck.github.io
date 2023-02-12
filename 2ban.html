@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" >
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>반편성 복사 2반</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             
@@ -13,7 +14,7 @@
               document.getElementById("copy_text").select(); //텍스트 박스 선택
               document.execCommand("copy");//클립보드 복사
               this.style.backgroundColor = "grey";
-              alert("복사완료");
+              swal("복사완료", "문자 보내실 때 꼭 이름 확인하세요!!","success");
             });
             
         });
